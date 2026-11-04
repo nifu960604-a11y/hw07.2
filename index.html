@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- 宣告使用 HTML5；DOCTYPE 是文件類型宣告，不需要結束標籤。 -->
+<html lang="zh-Hant">
+<!-- html 包住整份文件；lang="zh-Hant" 表示主要使用繁體中文。 -->
+<head>
+    <!-- head 放網頁資訊；這些資訊不會直接成為頁面中的報導文字。 -->
+    <meta charset="UTF-8">
+    <!-- UTF-8 可正確處理中文；meta 是空元素，不寫結束標籤。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport 讓行動裝置使用裝置寬度；不代表固定寬度的圖片會自動縮小。 -->
+    <meta name="description" content="走進台中火車站，認識國定古蹟、第二代紅磚站房與鐵道文化園區，透過清單、表格、照片和影片閱讀城市交通故事。">
+    <!-- description 提供網頁摘要；author 標示作者。 -->
+    <meta name="author" content="鄭芷盈">
+    <!-- robots 表達索引意圖；本機檔案不會因此自動被搜尋引擎收錄。 -->
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph 提供分享摘要，不是搜尋排名保證。 -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="台中火車站報導｜城市縱貫線的百年門戶">
+    <meta property="og:description" content="認識台中火車站的百年歷史、國定古蹟舊站房與鐵道文化園區，搭配景點表格、照片、影片及位置地圖。">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/45/Old_TRA_Taichung_station_May_2020.jpg">
+    <meta property="og:image:alt" content="台中火車站第二代舊站房紅磚建築與鐘樓全景">
+    <meta property="article:published_time" content="2026-10-07">
+    <meta property="article:modified_time" content="2026-10-28">
+    <!-- 正式上線後，再以真實公開網址加入 canonical 及 og:url；不要使用本機或虛構網址。 -->
+    <title>台中火車站報導｜HW07 外部 CSS 與相對路徑練習</title>
+    <!-- title 顯示在瀏覽器分頁；與 body 中的 h1 用途不同。 -->
+
+    <!-- 
+        HW07 方法三：以 link 元素載入外部 CSS，不在本頁保留 style 元素或行內 style。
+        相對路徑 css/hw07.css：從本 HTML 所在資料夾出發，進入 css 子資料夾，再讀取 hw07.css。
+    -->
+    <link rel="stylesheet" href="css/hw07.css">
+</head>
+<body>
+    <!-- header 是頁首；id="top" 是下方「回到頁首」連結的目的地。 -->
+    <header id="top">
+        <h1>台中火車站：城市縱貫線的百年門戶</h1>
+        <p><small>城市走讀 · 歷史地標 · 鐵道漫遊</small></p>
+        <p><strong>從紅磚舊站到現代高架，一起閱讀台中的城市交通記憶。</strong></p>
+        <!-- 遷移 1/3：以 reading-focus 類別對應外部 CSS -->
+        <p>本期焦點：<mark class="reading-focus">百年歷史與鐵道風景</mark>，從景點報導延伸到位置地圖。</p>
+        <p>作者：鄭芷盈｜報導整理日期：<time datetime="2026-10-14">2026 年 11 月 04 日</time></p>
+        <!-- 遷移 3/3：report-disclaimer 類別在外部 CSS 保留斜體設定 -->
+        <p><small class="report-disclaimer">本文為資料整理型教學報導，非現場採訪紀錄。</small></p>
+    </header>
+
+    <!-- nav 表示導覽區；href="#名稱" 會跳到本頁相同 id 的元素。 -->
+    <nav aria-label="報導目錄">
+        <h2>報導目錄</h2>
+        <ul>
+            <li><a href="#intro">車站簡介</a></li>
+            <li><a href="#highlights">景點特色與散步順序</a></li>
+            <li><a href="#table">景點比較表</a></li>
+            <li><a href="#photo">舊火車站照片</a></li>
+            <li><a href="#video">影音報導</a></li>
+            <li><a href="#map">位置地圖</a></li>
+            <li><a href="#tips">走讀小提醒</a></li>
+            <li><a href="#sources">資料來源</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <!-- main 包住本頁主要內容；article 表示可獨立閱讀的完整報導。 -->
+    <main id="main-content">
+        <article aria-label="台中火車站專題報導">
+            <section id="intro">
+                <h2>一、車站簡介</h2>
+                <p>
+                    台中火車站位於台中市中區，自 <strong>1905 年 5 月 15 日</strong>第一代站房設立以來，
+                    一直是台中城市發展的核心樞紐與重要門戶。車站區域結合了國定古蹟、鐵道文化與現代高架運輸，
+                    呈現出跨越百年的交通發展脈絡。
+                </p>
+                <p>
+                    站區最具代表性的景點是<strong>第二代舊站房</strong>（國定古蹟）。
+                    這座建築建於 1917 年，採用紅磚白飾帶的古典風格，
+                    曾見證台灣縱貫鐵路的黃金時期，也是台中最深具辨識度的城市地標之一。
+                </p>
+                <p>
+                    從歷史悠久的紅磚鐘樓到現代高架新站，台中火車站像一座立體的鐵道歷史博物館。
+                    本篇以區域整理與建議散步順序，介紹這座百年交通地標。
+                </p>
+                <p>車站地址：台中市中區台灣大道一段 1 號。<br>閱讀重點：國定古蹟、鐵道文化與新舊建築共融。</p>
+            </section>
+
+            <hr>
+
+            <section id="highlights">
+                <h2>二、景點特色與散步順序</h2>
+                <h3>值得留意的三個特色</h3>
+                <ul>
+                    <li><strong>古典建築：</strong>第二代舊站房連結了台灣鐵路縱貫線的發展歷史。</li>
+                    <li><strong>鐵道文化：</strong>舊月台與軌道區轉型為園區，展示歷史列車與藝文空間。</li>
+                    <li><strong>新舊共融：</strong>現代高架車站與歷史古蹟並存，形成獨特的空間層次。</li>
+                </ul>
+
+                <h3>建議散步順序</h3>
+                <!-- 遷移 2/3：route-note 類別在外部 CSS 保留此段的左框線與內距 -->
+                <p class="route-note">以下是本報導規劃的散步建議，並非官方指定路線。</p>
+                <ol>
+                    <li>抵達站前廣場，先觀察第二代舊站房的紅磚外觀與中央鐘樓造型。</li>
+                    <li>步入國定古蹟舊站房與舊月台區，觀察鐵鑄雕花柱與保存軌道。</li>
+                    <li>前往台中驛鐵道文化園區，閱讀解說牌並欣賞停放現場的退役列車。</li>
+                    <li>登上高架新站感受大跨距空間，最後可銜接綠空鐵道進行城市散步。</li>
+                </ol>
+            </section>
+
+            <hr>
+
+            <section id="table">
+                <h2>三、景點比較表</h2>
+                <table>
+                    <caption>台中火車站三處區域的特色與觀察重點</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">區塊名稱</th>
+                            <th scope="col">主要特色</th>
+                            <th scope="col">建議觀察重點</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">第二代舊站房</th>
+                            <td>建於 1917 年的國定古蹟</td>
+                            <td>紅磚白飾帶建築、中央鐘樓及拱門造型</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">舊月台與軌道區</th>
+                            <td>鐵道文化園區的核心展區</td>
+                            <td>鐵鑄月台柱、歷史軌道與退役列車展示</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">第三代高架新站</th>
+                            <td>現代化高架鐵路車站</td>
+                            <td>大跨距鋼結構頂棚與綠空鐵道銜接點</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <section id="photo">
+                <h2>四、舊火車站照片</h2>
+                <figure>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/45/Old_TRA_Taichung_station_May_2020.jpg"
+                        alt="台中火車站第二代舊站房紅磚建築與鐘樓全景"
+                        width="480">
+                    <figcaption>
+                        台中火車站舊站房是台中著名的國定古蹟與地標建築。
+                        圖片來源：<a href="https://zh.wikipedia.org/zh-tw/%E8%87%BA%E4%B8%AD%E7%81%AB%E8%BB%8A%E7%AB%99_(%E5%8F%A4%E8%B9%9F)" target="_blank" rel="noopener noreferrer">維基共享資源「臺中火車站 (古蹟)」頁面</a>。
+                    </figcaption>
+                </figure>
+            </section>
+
+            <hr>
+
+            <section id="video">
+                <h2>五、影音報導</h2>
+                <p>透過下方影片認識台中火車站的歷史演變與新舊交替，再比較影片畫面與本文介紹的景點。</p>
+                <figure>
+                    <iframe
+                        class="video-frame"
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/SGXXjZFY4fY"
+                        title="台中火車站歷史介紹影片"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                    <figcaption>影片：台中火車站歷史介紹與轉變。</figcaption>
+                </figure>
+                <p><a href="https://www.youtube.com/watch?v=SGXXjZFY4fY" target="_blank" rel="noopener noreferrer">在 YouTube 觀看台中火車站介紹（另開分頁）</a></p>
+                <p><small>影片為外部作者發布的歷史介紹，現場狀況請以最新官方資訊為準。</small></p>
+            </section>
+
+            <section id="map">
+                <h2>六、位置地圖：找到台中火車站</h2>
+                <p>台中火車站位於台中市中區，地址為<strong>臺灣大道一段 1 號</strong>。下方地圖標示本文介紹的車站位置，方便讀者對照景點與周邊街道。</p>
+                <iframe
+                    class="map-frame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58235.64347648697!2d120.62143684414039!3d24.18128014463795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d1438fb3d3f%3A0xb7b4ebd02f1906b6!2z6Ie65Lit54Gr6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1791947682473!5m2!1szh-TW!2stw"
+                    width="480"
+                    height="360"
+                    title="台中火車站位置 Google 地圖"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+                <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E4%B8%AD%E7%81%AB%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener noreferrer">在 Google 地圖開啟台中火車站（另開分頁）</a></p>
+                <p><small>位置查詢由 Google 地圖提供；抵達後請依現場導覽牌確認入口與步道。</small></p>
+            </section>
+
+            <hr>
+
+            <aside id="tips" aria-labelledby="tips-title">
+                <h2 id="tips-title">走讀小提醒</h2>
+                <details open>
+                    <summary>參觀與走讀時的注意事項</summary>
+                    <ul>
+                        <li>留意站區人潮與列車進站聲響，遵守站內通行指引。</li>
+                        <li>古蹟展區與舊月台請勿跨越安全警戒線，共同維護歷史資產。</li>
+                        <li>可規劃銜接鄰近的綠空鐵道或宮原眼科進行半日散步。</li>
+                    </ul>
+                </details>
+            </aside>
+
+            <hr>
+
+            <section id="sources">
+                <h2>七、資料來源</h2>
+                <p>本報導依下列資料整理，散步順序與觀察建議由示範作者規劃。</p>
+                <ul>
+                    <li><a href="https://www.taiwan.net.tw/" target="_blank" rel="noopener noreferrer">交通部觀光署：臺中火車站</a></li>
+                    <li><a href="https://www.boch.gov.tw/" target="_blank" rel="noopener noreferrer">文化部文化資產局：臺中火車站（國定古蹟）</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=SGXXjZFY4fY" target="_blank" rel="noopener noreferrer">YouTube：台中火車站介紹影片</a></li>
+                </ul>
+                <p><small>資料整理日期：2026 年 10 月 14 日。</small></p>
+            </section>
+        </article>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p><strong>第七次 HTML 與 CSS 作業｜台中火車站報導</strong></p>
+        <p><small>作者：鄭芷盈 · 更新日期：2026 年 11 月 04 日</small></p>
+        <p><small>文字依來源整理；照片與影片權利屬原作者。本文為學生專題報導。</small></p>
+        <p><a href="#top">回到頁首</a></p>
+    </footer>
+</body>
+</html>
